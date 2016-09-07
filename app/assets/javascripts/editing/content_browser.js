@@ -20,6 +20,21 @@ jQuery(function(){
             }
           }
         };
+      } else if (filter_context.person) {
+        return {
+          _obj_class: {
+            field: '_obj_class',
+            options: {
+              Person: {
+                icon: 'user',
+                enable_create: true,
+                preset: {
+                  _obj_class: "Person"
+                }
+              }
+            }
+          }
+        };
       } else {
         return {
           _obj_class: {

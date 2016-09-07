@@ -1,0 +1,9 @@
+<% if widget.person %>
+  <%= scrivito_tag :p, widget.person, :name %>
+  <%= widget.person.name %>
+  <% image_tag scrivito_url(widget.person.image) if widget.person.image %>
+  <p><%= scrivito_value widget.person.body %></p>
+<% else %>
+  No person linked
+  <%= scrivito_tag :div, widget, :person, data: { scrivito_editors_filter_context: { person: true } } %>
+<% end %>
