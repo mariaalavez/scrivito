@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workshop</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= scrivito_head_tags %>
+</head>
+<body>
+  <% if logged_in? %>
+    <div>
+      logged in as <%= current_user.login %>
+    </div>
+  <% else %>
+    <div>
+      Not logged in
+    </div>
+  <% end %>
+<%= yield %>
+<%= scrivito_body_tags %>
+
+</body>
+</html>

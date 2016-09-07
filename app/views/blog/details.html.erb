@@ -1,0 +1,11 @@
+<div class="details-view" data-scrivito-modal-size="large">
+  <%= scrivito_details_for do %>
+    <%= link_to "jump to page", scrivito_path(@obj), target: :_top %>
+
+    <div>title</div>
+    <%= scrivito_tag :div, @obj, :title %>
+    <div>page_title</div>
+    <%= scrivito_tag :div, @obj, :page_title %>
+
+  <% end %>
+</div>

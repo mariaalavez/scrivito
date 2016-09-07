@@ -1,0 +1,12 @@
+<div>
+  <h3>
+    <%= link_to post.title, scrivito_path(post) %>
+    <small>
+      Published on <%= format_date(post[:published_at]) %>
+      <% if post.author_name.present? %>
+        by <%= post.author_name %>
+      <% end %>
+    </small>
+  </h3>
+</div>
+</hr>

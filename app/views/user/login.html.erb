@@ -1,0 +1,17 @@
+<%= render partial: 'flash_messages' %>
+
+<%= simple_form_for :user, url: { controller: 'user', action: 'login' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% hidden_field_tag :return_to, params[:return_to] %>
+    <%= f.input :login %>
+    <%= f.input :password %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'login' %>
+    <%= link_to 'cancel', '/' %>
+
+  </div>
+<% end %>

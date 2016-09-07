@@ -1,0 +1,7 @@
+<%= content_tag :div, id: 'blog', data: { path: @obj.path} do %>
+  <%= scrivito_tag :h1, @obj, :title %>
+
+  <div class="blog_post">
+    <%= render partial: 'post', collection: @blog_posts %>
+  </div>
+<% end %>

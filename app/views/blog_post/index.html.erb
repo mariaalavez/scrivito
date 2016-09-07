@@ -1,0 +1,22 @@
+<%= scrivito_tag :h2, @obj, :title %>
+  <div>
+    By <%= scrivito_tag :span, @obj, :author_name, class: 'edit-inline' %>
+  </div>
+
+<%= scrivito_tag(:span, @obj, :published_at, { data: {scrivito: {'date' => 'MM dd, yy', 'time-format' => ' '}}}) do %>
+  <% format_date(@obj[:published_at]) %>
+<% end %>
+</hr>
+
+<%= scrivito_tag :div, @obj, :body, class: 'panel-body' %>
+<% if scrivito_in_editable_view? %>
+  <%= scrivito_tag :div, @obj, :related_link, data: { scrivito_editors_filter_context: { blog_link: true }} %>
+<% else %>
+  <ul>
+    <% @obj.related_link.each do |link| %>
+      <li>
+        <%= link_to link.display_title, scrivito_path(link) %>
+      </li>
+      <% end %>
+  </ul>
+<% end %>
